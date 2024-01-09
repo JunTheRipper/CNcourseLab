@@ -7,10 +7,6 @@ Project Name Psychopy Experimental programming design(Psychopy 实验编程设�
 
 > ### Programming Language and Version: Python 3.8
 
-### Time Taking:
-
-> **8 minutes 8分钟**
-
 ### Task:
 
 > **Emotional n-back(情绪n-back范式) 让被试判断每个情绪图片刺激的效价,让被试判断当前情绪图片刺激的效价是否与1-back 以及 2-back相匹配。**
