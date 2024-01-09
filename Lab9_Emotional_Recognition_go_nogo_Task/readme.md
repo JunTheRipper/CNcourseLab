@@ -11,10 +11,6 @@ This task assesses information processing bias between positive and negative fac
 
 该任务评估正面和负面面部表情的信息加工偏差
 
-### Time Taking:
-
-> 6 minutes 6分钟
-
 ### Task:
 
 > 参与者被告知目标情绪（快乐、悲伤、中性），并要求仅当目标情绪存在时按下按钮。该任务由六个组块组成，每个组块呈现一系列面部表情：
@@ -128,7 +124,7 @@ This task assesses information processing bias between positive and negative fac
 > If you see a positive face, press the 'Space' key within 2 seconds
 > If you see a negative face,
 
-> ### `<font color=red>`**DO NOT**`</font>`
+> ### `<font color=red>`**DO NOT** `</font>`
 >
 > press any key
 > If you are ready,

@@ -1,5 +1,5 @@
 <div align="center">
-<h1 align="center">🍭Project Five:  Lab_Emotional_N-Back_Task 情绪N-Back加工任务 </h1>
+<h1 align="center">🍭Lab_Emotional_N-Back_Task 情绪N-Back加工任务 </h1>
 Project Name Psychopy Experimental programming design(Psychopy 实验编程设计)
 </div>
 
