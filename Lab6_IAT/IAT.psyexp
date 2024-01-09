@@ -25,7 +25,7 @@
     <Param val="False" valType="bool" updates="None" name="Show mouse"/>
     <Param val="height" valType="str" updates="None" name="Units"/>
     <Param val="" valType="str" updates="None" name="Use version"/>
-    <Param val="[1607, 900]" valType="code" updates="None" name="Window size (pixels)"/>
+    <Param val="[1607, 930]" valType="code" updates="None" name="Window size (pixels)"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
     <Param val="black" valType="str" updates="None" name="color"/>
     <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
@@ -86,8 +86,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="blocks_order = str(int(random()*2+1))" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="blocks_order = Number.parseInt(((random() * 2) + 1)).toString();&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="cfile = ((&quot;conditions/conditions&quot; + blocks_order) + &quot;.xlsx&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="cfile = 'conditions/conditions' +blocks_order+ '.xlsx'" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -249,8 +249,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="corr_record = []&amp;#10;rt_record = []&amp;#10;&amp;#10;&amp;#10;interval_time_list = [0.1, 0.4, 0.7]" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="corr_record = [];&amp;#10;rt_record = [];&amp;#10;interval_time_list = [0.1, 0.4, 0.7];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="shuffle(interval_time_list);&amp;#10;interval_time = interval_time_list[0];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;shuffle(interval_time_list)&amp;#10;interval_time = interval_time_list[0]&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="util.shuffle(interval_time_list);&amp;#10;interval_time = interval_time_list[0];&amp;#10;console.log(stimuli_words);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;shuffle(interval_time_list)&amp;#10;interval_time = interval_time_list[0]&amp;#10;print(stimuli_words)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -361,7 +361,7 @@
         <Param val="height" valType="str" updates="None" name="units"/>
       </ImageComponent>
       <KeyboardComponent name="error_feedback_resp">
-        <Param val="'e','i'" valType="list" updates="set every repeat" name="allowedKeys"/>
+        <Param val="'e','i'" valType="list" updates="constant" name="allowedKeys"/>
         <Param val="$CorrAns" valType="str" updates="constant" name="correctAns"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="True" valType="bool" updates="constant" name="discard previous"/>
@@ -489,10 +489,10 @@
       <CodeComponent name="code_nstep">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="nStep = 0" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="nStep = 0&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="nStep = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="nStep += 1;&amp;#10;nstep_msg = `第${nStep}轮`;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="nStep += 1&amp;#10;&amp;#10;nstep_msg = f'第{nStep}轮'" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="nStep += 1;&amp;#10;nstep_msg = `第${nStep}轮`;&amp;#10;console.log(step_order_filename);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="nStep += 1&amp;#10;&amp;#10;nstep_msg = f'第{nStep}轮'&amp;#10;&amp;#10;print(step_order_filename)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -610,7 +610,7 @@
     <LoopInitiator loopType="TrialHandler" name="blocks">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$'conditions/conditions' +blocks_order+ '.xlsx'" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$cfile" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>

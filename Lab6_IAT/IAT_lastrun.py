@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2022.2.4),
-    on January 09, 2024, at 12:44
+    on January 09, 2024, at 14:30
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -68,7 +68,7 @@ frameTolerance = 0.001  # how close to onset before 'same' frame
 
 # --- Setup the Window ---
 win = visual.Window(
-    size=[1607, 900], fullscr=False, screen=0, 
+    size=[1607, 930], fullscr=False, screen=0, 
     winType='pyglet', allowStencil=False,
     monitor='testMonitor', color='black', colorSpace='rgb',
     blendMode='avg', useFBO=True, 
@@ -121,6 +121,8 @@ upper_hint_image = visual.ImageStim(
 # --- Initialize components for Routine "Step_Instruction" ---
 # Run 'Begin Experiment' code from code_nstep
 nStep = 0
+
+
 instr_image = visual.ImageStim(
     win=win,
     name='instr_image', units='height', 
@@ -226,6 +228,8 @@ routineTimer = core.Clock()  # to track time remaining of each (possibly non-sli
 continueRoutine = True
 routineForceEnded = False
 # update component parameters for each repeat
+# Run 'Begin Routine' code from blocks_order_code
+cfile = 'conditions/conditions' +blocks_order+ '.xlsx'
 IAT_instr_key_resp.keys = []
 IAT_instr_key_resp.rt = []
 _IAT_instr_key_resp_allKeys = []
@@ -397,7 +401,7 @@ else:
 # set up handler to look after randomisation of conditions etc
 blocks = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('conditions/conditions' +blocks_order+ '.xlsx'),
+    trialList=data.importConditions(cfile),
     seed=None, name='blocks')
 thisExp.addLoop(blocks)  # add the loop to the experiment
 thisBlock = blocks.trialList[0]  # so we can initialise stimuli with some values
@@ -421,6 +425,9 @@ for thisBlock in blocks:
     nStep += 1
     
     nstep_msg = f'第{nStep}轮'
+    
+    print(step_order_filename)
+    
     instr_image.setImage(step_instruction_filename)
     nstep_text.setText(nstep_msg)
     instr_key_resp.keys = []
@@ -628,7 +635,7 @@ for thisBlock in blocks:
         
         shuffle(interval_time_list)
         interval_time = interval_time_list[0]
-        
+        print(stimuli_words)
         trial_test_background_img.setImage(step_background_filename)
         stimuli_text.setText(stimuli_words)
         response.keys = []
